@@ -1,0 +1,26 @@
+{
+  "name": "employeebuilder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackgoers96/EmployeeBuilder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jackgoers96/EmployeeBuilder/issues"
+  },
+  "homepage": "https://github.com/Jackgoers96/EmployeeBuilder#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}

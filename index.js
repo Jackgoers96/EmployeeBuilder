@@ -1,4 +1,3 @@
-
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
@@ -8,7 +7,7 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "src");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join("./Employeebuilder", "team.html");
 
 const render = require("./lib/htmlRenderer");
 

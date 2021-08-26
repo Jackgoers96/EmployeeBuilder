@@ -7,7 +7,7 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "src");
-const outputPath = path.join("./Employeebuilder", "team.html");
+const outputPath = path.join(OUTPUT_DIR, "./dist/team.html");
 
 const render = require("./lib/htmlRenderer");
 
@@ -46,29 +46,29 @@ const generateTeam = () => {
           {
             when: () => ans1.role === "Manager",
             type: "input",
-            message: "What is their office number",
             name: "officeNumber",
+            message: "What is their office number",
           },
           {
             when: () => ans1.role === "Engineer",
 
             type: "input",
-            message: "What is the GitHub Username?",
             name: "github",
+            message: "What is the GitHub Username?",
           },
 
           {
             when: () => ans1.role === "Intern",
 
             type: "input",
-            message: "What is the school's name?",
             name: "school",
+            message: "What is the school's name?",
           },
 
           {
             type: "confirm",
-            message: "Would you like to add another team member?",
             name: "addMember",
+            message: "Would you like to add another team member?",
           },
         ])
 
@@ -78,8 +78,8 @@ const generateTeam = () => {
               ans1.name,
               ans1.id,
               ans1.email,
-              ans1.role,
-              ans2.officeNumber
+              ans2.officeNumber,
+              ans1.role
             );
             team.push(manager);
           }
@@ -89,8 +89,8 @@ const generateTeam = () => {
               ans1.name,
               ans1.id,
               ans1.email,
-              ans1.role,
-              ans2.github
+              ans2.github,
+              ans1.role
             );
             team.push(engineer);
           }
@@ -100,8 +100,8 @@ const generateTeam = () => {
               ans1.name,
               ans1.id,
               ans1.email,
-              ans1.role,
-              ans2.school
+              ans2.school,
+              ans1.role
             );
             team.push(intern);
           }
@@ -111,7 +111,7 @@ const generateTeam = () => {
             team.forEach((team) => {
               console.log(team);
             });
-            fs.writeFile("team.html", render(team), (err) => {
+            fs.writeFile("./dist/team.html", render(team), (err) => {
               if (err) {
                 throw err;
               }
